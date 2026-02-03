@@ -5,129 +5,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Гурток "Грайливі"</title>
   <style>
-  :root {
-    --main-dark: #3a4a3f;      /* темно-зелений для заголовків, футера */
-    --main-light: #a3b18a;     /* приглушений оливковий для блоків, карток */
-    --accent: #7c8b70;         /* світліший зелений для акцентів, навігації */
-    --bg-color: #f2e9d5;       /* бежевий фон для сторінки */
-    --text-color: #3a3a3a;     /* темно-сірий текст */
-    --news-bg: #e8e3d8;        /* фон для новин */
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
+:root {
+  --main-dark: #3a4a3f;      /* темно-зелений для заголовків, футера */
+  --main-light: #a3b18a;     /* приглушений оливковий для карток та навігації */
+  --accent: #7c8b70;         /* світліший зелений для hover та акцентів */
+  --bg-color: #f2e9d5;       /* бежевий фон */
+  --text-color: #3a3a3a;     /* темно-сірий текст */
+  --news-bg: #e8e3d8;        /* фон для новин */
+  --gradient-header: linear-gradient(135deg, #3a4a3f 0%, #a3b18a 100%);
+  --gradient-btn: linear-gradient(45deg, #a3b18a, #7c8b70);
+}
 
-  header {
-    background-color: var(--main-dark);
-    color: var(--bg-color);
-    padding: 20px;
-    text-align: center;
-    position: relative;
-  }
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
 
-  header img {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    left: 20px;
-    top: 15px;
-    border-radius: 50%;
-    border: 3px solid var(--bg-color);
-  }
+/* HEADER */
+header {
+  background: var(--gradient-header);
+  color: #f2e9d5;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-  nav {
-    display: flex;
-    justify-content: center;
-    background-color: var(--main-light);
-  }
+header img {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  border-radius: 50%;
+  border: 3px solid #f2e9d5;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
 
-  nav a {
-    padding: 15px 20px;
-    text-decoration: none;
-    color: var(--main-dark);
-    font-weight: bold;
-  }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-  nav a:hover {
-    background-color: var(--accent);
-    color: var(--bg-color);
-    transition: 0.3s;
-  }
+nav a {
+  padding: 15px 25px;
+  margin: 5px;
+  text-decoration: none;
+  color: var(--main-dark);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 
-  section {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
+nav a:hover {
+  background: var(--gradient-btn);
+  color: var(--bg-color);
+  transform: scale(1.05);
+}
 
-  h2 {
-    color: var(--main-dark);
-  }
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  .girls-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+h2 {
+  color: var(--main-dark);
+  margin-bottom: 20px;
+  position: relative;
+}
 
-  .girl {
-    background-color: var(--main-light);
-    color: var(--bg-color);
-    padding: 10px;
-    border-radius: 10px;
-    width: 120px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 8px;
+  border-radius: 2px;
+}
 
-  .girl img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 2px solid var(--bg-color);
-    object-fit: cover;
-  }
+/* GIRLS LIST */
+.girls-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+.girl {
+  background: linear-gradient(145deg, #a3b18a, #7c8b70);
+  color: #f2e9d5;
+  padding: 15px;
+  border-radius: 15px;
+  width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .gallery img {
-    width: 220px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.2s ease;
-  }
+.girl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
+.girl img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #f2e9d5;
+  object-fit: cover;
+}
 
-  .news-item {
-    background-color: var(--news-bg);
-    padding: 10px;
-    margin-bottom: 10px;
-    border-left: 5px solid var(--accent);
-    border-radius: 5px;
-  }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
 
-  footer {
-    text-align: center;
-    padding: 15px;
-    background-color: var(--main-dark);
-    color: var(--bg-color);
-    margin-top: 20px;
-  }
+.gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* NEWS */
+.news-item {
+  background-color: var(--news-bg);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 6px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.news-item:hover {
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: var(--main-dark);
+  color: var(--bg-color);
+  margin-top: 40px;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+/* LINKS */
+a {
+  color: var(--main-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
 </style>
 </head>
 <body>
