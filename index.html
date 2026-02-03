@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гурток "Грайливі"</title>
+  <style>
+    :root {
+      --plast-blue: #005bbb;
+      --plast-yellow: #ffd500;
+      --plast-red: #d72638;
+      --plast-green: #00a86b;
+      --bg-color: #f5f5f5;
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--plast-blue);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--plast-yellow);
+    }
+
+    nav a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: var(--plast-blue);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: var(--plast-red);
+      color: white;
+      transition: 0.3s;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--plast-blue);
+    }
+
+    .girls-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .girl {
+      background-color: var(--plast-green);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      width: 120px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .girl img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid white;
+      object-fit: cover;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery div {
+      width: 150px;
+      height: 100px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .news-item {
+      background-color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--plast-red);
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: var(--plast-blue);
+      color: white;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Plast_logo.svg/1200px-Plast_logo.svg.png" alt="Герб гуртка">
+  <h1>Гурток "Грайливі"</h1>
+  <p>Девіз: "Грай, вчися, досліджуй!"</p>
+</header>
+
+<nav>
+  <a href="#about">Про гурток</a>
+  <a href="#photos">Фото</a>
+  <a href="#news">Новини</a>
+  <a href="#contacts">Контакти</a>
+</nav>
+
+<section id="about">
+  <h2>Про гурток</h2>
+  <p>Гурток "Грайливі" – дружня команда дівчаток, які грають, навчаються та подорожують разом. Наші учасниці:</p>
+  <div class="girls-list">
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=1" alt="Аліна"><span>Аліна</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=2" alt="Вікторія"><span>Вікторія</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=3" alt="Дарина"><span>Дарина</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=4" alt="Єва"><span>Єва</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=5" alt="Злата"><span>Злата</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=6" alt="Ірина"><span>Ірина</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=7" alt="Катерина"><span>Катерина</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=8" alt="Ліза"><span>Ліза</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=9" alt="Марта"><span>Марта</span></div>
+    <div class="girl"><img src="https://i.pravatar.cc/70?img=10" alt="Олександра"><span>Олександра</span></div>
+  </div>
+</section>
+
+<section id="photos">
+  <h2>Фото гуртка</h2>
+  <p>Галерея кольорів Пласту:</p>
+  <div class="gallery">
+    <div style="background-color: var(--plast-blue)">Синій</div>
+    <div style="background-color: var(--plast-yellow)">Жовтий</div>
+    <div style="background-color: var(--plast-red)">Червоний</div>
+    <div style="background-color: var(--plast-green)">Зелений</div>
+  </div>
+</section>
+
+<section id="news">
+  <h2>Новини</h2>
+  <div class="news-item">
+    <strong>01.02.2026:</strong> Відбулася наша перша зимова подорож!
+  </div>
+  <div class="news-item">
+    <strong>15.01.2026:</strong> Грали в інтерактивні ігри та знайомились один з одним.
+  </div>
+  <div class="news-item">
+    <strong>10.01.2026:</strong> Створили власний герб гуртка "Грайливі".
+  </div>
+</section>
+
+<section id="contacts">
+  <h2>Контакти</h2>
+  <p>Вожата: пані Олена</p>
+  <p>Email: <a href="mailto:olena@graivlii.ua">olena@graivlii.ua</a></p>
+  <p>Instagram: <a href="https://instagram.com/graivlii" target="_blank">@graivlii</a></p>
+</section>
+
+<footer>
+  © 2026 Гурток "Грайливі"
+</footer>
+
+</body>
+</html>
