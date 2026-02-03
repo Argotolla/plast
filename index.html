@@ -176,24 +176,27 @@
 
 <section id="latest-news">
   <h2>Останні новини</h2>
-  <div class="news-item">
-    <strong>10.02.2026:</strong> Відбулася весняна екскурсія до лісу.
-  </div>
-
-  <div class="news-item">
-    <strong>05.02.2026:</strong> Провели майстер-клас з виготовлення гербів гуртка.
-  </div>
-
-  <div class="news-item">
-    <strong>01.02.2026:</strong> Відбулася перша зимова подорож гуртка.
-  </div>
-
-  <div class="news-item">
-    <strong>28.01.2026:</strong> Дівчата брали участь у спортивних іграх на свіжому повітрі.
-  </div>
-
+  <div id="latest-news-container"></div>
   <p><a href="news.html">Всі новини →</a></p>
 </section>
+
+<script>
+  fetch('news.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('latest-news-container');
+      // беремо останні 4 новини
+      const latest = data.slice(0, 4);
+      latest.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.innerHTML = `<strong>${item.date}:</strong> ${item.text}`;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => console.error('Помилка завантаження новин:', err));
+</script>
+
 
 
 <section id="contacts">
@@ -209,6 +212,7 @@
 
 </body>
 </html>
+
 
 
 
