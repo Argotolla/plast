@@ -13,34 +13,21 @@
 <body>
   <h1>Новини гуртка "Грайливі"</h1>
   <a href="index.html">← Назад на головну</a>
+  <div id="all-news"></div>
 
-  <div class="news-item">
-    <strong>10.02.2026:</strong> Відбулася весняна екскурсія до лісу.
-  </div>
-
-  <div class="news-item">
-    <strong>05.02.2026:</strong> Провели майстер-клас з виготовлення гербів гуртка.
-  </div>
-
-  <div class="news-item">
-    <strong>01.02.2026:</strong> Відбулася перша зимова подорож гуртка.
-  </div>
-
-  <div class="news-item">
-    <strong>28.01.2026:</strong> Дівчата брали участь у спортивних іграх на свіжому повітрі.
-  </div>
-
-  <div class="news-item">
-    <strong>15.01.2026:</strong> Грали в інтерактивні ігри та знайомились один з одним.
-  </div>
-
-  <div class="news-item">
-    <strong>12.01.2026:</strong> Проводили конкурс на кращу емблему гуртка.
-  </div>
-
-  <div class="news-item">
-    <strong>10.01.2026:</strong> Створили власний герб гуртка "Грайливі".
-  </div>
-
+  <script>
+    fetch('news.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('all-news');
+        data.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'news-item';
+          div.innerHTML = `<strong>${item.date}:</strong> ${item.text}`;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => console.error('Помилка завантаження новин:', err));
+  </script>
 </body>
 </html>
