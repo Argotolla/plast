@@ -5,138 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Гурток "Грайливі"</title>
   <style>
-    :root {
-      --plast-blue: #005bbb;
-      --plast-yellow: #ffd500;
-      --plast-red: #d72638;
-      --plast-green: #00a86b;
-      --bg-color: #f5f5f5;
-      --text-color: #333;
-    }
+  :root {
+    --main-dark: #3a4a3f;      /* темно-зелений для заголовків, футера */
+    --main-light: #a3b18a;     /* приглушений оливковий для блоків, карток */
+    --accent: #7c8b70;         /* світліший зелений для акцентів, навігації */
+    --bg-color: #f2e9d5;       /* бежевий фон для сторінки */
+    --text-color: #3a3a3a;     /* темно-сірий текст */
+    --news-bg: #e8e3d8;        /* фон для новин */
+  }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-  color: var(--text-color);
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
 
-    header {
-      background-color: var(--main-dark);
-  color: var(--bg-color);
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
+  header {
+    background-color: var(--main-dark);
+    color: var(--bg-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
 
-    header img {
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      left: 20px;
-      top: 15px;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
+  header img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+  }
 
-    nav {
-      display: flex;
-  justify-content: center;
-  background-color: var(--main-light);
-    }
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--main-light);
+  }
 
-    nav a {
-      padding: 15px 20px;
-      text-decoration: none;
-      color: var(--main-dark);
-      font-weight: bold;
-    }
+  nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--main-dark);
+    font-weight: bold;
+  }
 
-    nav a:hover {
-      background-color: var(--accent);
-  color: var(--bg-color);
-      transition: 0.3s;
-    }
+  nav a:hover {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    transition: 0.3s;
+  }
 
-    section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+  section {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    h2 {
-      color: var(--main-dark);
-    }
+  h2 {
+    color: var(--main-dark);
+  }
 
-    .girls-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+  .girls-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 
-    .girl {
-      background-color: var(--main-light);
-  color: var(--bg-color);
-      padding: 10px;
-      border-radius: 10px;
-      width: 120px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .girl {
+    background-color: var(--main-light);
+    color: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .girl img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      border: 2px solid white;
-      object-fit: cover;
-    }
+  .girl img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid var(--bg-color);
+    object-fit: cover;
+  }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-.gallery img {
-  width: 220px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-    .gallery div {
-      width: 150px;
-      height: 100px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-    }
+  .gallery img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+  }
 
-    .news-item {
-      background-color: white;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-left: 5px solid var(--accent);
-  background-color: #f9f5eb; /* світліший блок новини на бежевому фоні */
-      border-radius: 5px;
-    }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: var(--main-dark);
-  color: var(--bg-color);
-      margin-top: 20px;
-    }
+  .news-item {
+    background-color: var(--news-bg);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--accent);
+    border-radius: 5px;
+  }
 
-  </style>
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--main-dark);
+    color: var(--bg-color);
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
 
