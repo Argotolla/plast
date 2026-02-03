@@ -181,7 +181,7 @@
 </section>
 
 <script>
-  fetch('news.json')
+  fetch('news.json?nocache=' + Date.now())
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('latest-news-container');
@@ -212,6 +212,7 @@
 
 </body>
 </html>
+
 
 
 
