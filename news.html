@@ -16,7 +16,7 @@
   <div id="all-news"></div>
 
   <script>
-    fetch('news.json')
+    fetch('news.json?nocache=' + Date.now())
       .then(response => response.json())
       .then(data => {
         const container = document.getElementById('all-news');
