@@ -4,16 +4,73 @@
   <meta charset="UTF-8">
   <title>Галерея гуртка "Грайливі"</title>
   <style>
-    body { font-family: Arial; background: #f5f5f5; text-align: center; }
-    img { margin: 10px; width: 200px; height: 200px; border-radius: 10px; object-fit: cover; }
-    a { display: inline-block; margin: 10px; text-decoration: none; color: var(--plast-blue); font-weight: bold;}
-    h1 { color: #005bbb; }
+    :root {
+      --main-dark: #3a4a3f;   /* темно-зелений для заголовків */
+      --main-light: #a3b18a;  /* приглушений оливковий для блоків */
+      --bg-color: #f2e9d5;    /* бежевий фон */
+      --text-color: #3a3a3a;  /* темно-сірий текст */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--main-dark);
+      margin-bottom: 15px;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 15px;
+      background-color: var(--main-light);
+      color: var(--main-dark);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    a.back-link:hover {
+      background-color: var(--main-dark);
+      color: var(--bg-color);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      justify-items: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
   </style>
 </head>
 <body>
   <h1>Галерея гуртка "Грайливі"</h1>
-  <a href="index.html">← Назад на головну</a>
-  <div>
+  <a href="index.html" class="back-link">← Назад на головну</a>
+
+  <div class="gallery">
     <img src="https://i.pinimg.com/736x/bd/85/16/bd8516de1594430bdd67db9e32ef8698.jpg" alt="Аліна">
     <img src="https://i.pinimg.com/736x/78/06/67/780667cf36968f3c14d2a658cb8e7000.jpg" alt="Вікторія">
     <img src="https://i.pinimg.com/736x/2e/80/ce/2e80ce35179fc3551b7ad860eb8ed6c5.jpg" alt="Дарина">
