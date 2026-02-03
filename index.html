@@ -4,192 +4,227 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Гурток "Грайливі"</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+    :root {
+      --main-dark: #3a4a3f;      /* темно-зелений для заголовків, футера */
+      --main-light: #a3b18a;     /* приглушений оливковий для карток та навігації */
+      --accent: #7c8b70;         /* світліший зелений для hover та акцентів */
+      --bg-color: #f2e9d5;       /* бежевий фон */
+      --text-color: #3a3a3a;     /* темно-сірий текст */
+      --news-bg: #e8e3d8;        /* фон для новин */
+      --gradient-header: linear-gradient(135deg, #3a4a3f 0%, #a3b18a 100%);
+      --gradient-btn: linear-gradient(45deg, #a3b18a, #7c8b70);
+    }
 
-:root {
-  --main-dark: #3a4a3f;      /* темно-зелений для заголовків, футера */
-  --main-light: #a3b18a;     /* приглушений оливковий для карток та навігації */
-  --accent: #7c8b70;         /* світліший зелений для hover та акцентів */
-  --bg-color: #f2e9d5;       /* бежевий фон */
-  --text-color: #3a3a3a;     /* темно-сірий текст */
-  --news-bg: #e8e3d8;        /* фон для новин */
-  --gradient-header: linear-gradient(135deg, #3a4a3f 0%, #a3b18a 100%);
-  --gradient-btn: linear-gradient(45deg, #a3b18a, #7c8b70);
-}
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
+    /* HEADER */
+    header {
+      background: var(--gradient-header);
+      color: #f2e9d5;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
 
-/* HEADER */
-header {
-  background: var(--gradient-header);
-  color: #f2e9d5;
-  padding: 30px 20px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+    header img {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      border-radius: 50%;
+      border: 3px solid #f2e9d5;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
 
-header img {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  border-radius: 50%;
-  border: 3px solid #f2e9d5;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
+    /* NAVIGATION */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--main-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: var(--main-light);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    nav a {
+      padding: 15px 25px;
+      margin: 5px;
+      text-decoration: none;
+      color: var(--main-dark);
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
 
-nav a {
-  padding: 15px 25px;
-  margin: 5px;
-  text-decoration: none;
-  color: var(--main-dark);
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
+    nav a:hover {
+      background: var(--gradient-btn);
+      color: var(--bg-color);
+      transform: scale(1.05);
+    }
 
-nav a:hover {
-  background: var(--gradient-btn);
-  color: var(--bg-color);
-  transform: scale(1.05);
-}
+    /* SECTIONS */
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-/* SECTIONS */
-section {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
+    h2 {
+      color: var(--main-dark);
+      margin-bottom: 20px;
+      position: relative;
+    }
 
-h2 {
-  color: var(--main-dark);
-  margin-bottom: 20px;
-  position: relative;
-}
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
 
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  margin-top: 8px;
-  border-radius: 2px;
-}
+    /* GIRLS LIST */
+    .girls-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
-/* GIRLS LIST */
-.girls-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
+    .girl {
+      background: linear-gradient(145deg, #a3b18a, #7c8b70);
+      color: #f2e9d5;
+      padding: 15px;
+      border-radius: 15px;
+      width: 140px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.girl {
-  background: linear-gradient(145deg, #a3b18a, #7c8b70);
-  color: #f2e9d5;
-  padding: 15px;
-  border-radius: 15px;
-  width: 140px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .girl:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
 
-.girl:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
+    .girl img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #f2e9d5;
+      object-fit: cover;
+    }
 
-.girl img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 2px solid #f2e9d5;
-  object-fit: cover;
-}
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      margin-top: 20px;
+    }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  margin-top: 20px;
-}
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
 
-.gallery img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+    /* NEWS */
+    .news-item {
+      background-color: var(--news-bg);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 6px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
 
-/* NEWS */
-.news-item {
-  background-color: var(--news-bg);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-left: 6px solid var(--accent);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
+    .news-item:hover {
+      transform: translateY(-3px);
+    }
 
-.news-item:hover {
-  transform: translateY(-3px);
-}
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--main-dark);
+      color: var(--bg-color);
+      margin-top: 40px;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: var(--main-dark);
-  color: var(--bg-color);
-  margin-top: 40px;
-  box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
-}
+    /* LINKS */
+    a {
+      color: var(--main-dark);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-/* LINKS */
-a {
-  color: var(--main-dark);
-  text-decoration: none;
-  transition: color 0.3s;
-}
+    a:hover {
+      color: var(--accent);
+    }
 
-a:hover {
-  color: var(--accent);
-}
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 5px;
+      }
 
-</style>
+      .girls-list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .girl {
+        width: 80%;
+        max-width: 250px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery img {
+        width: 140px;
+        height: 140px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -202,7 +237,7 @@ a:hover {
 <nav>
   <a href="#about">Про гурток</a>
   <a href="#photos">Фото</a>
-  <a href="#news">Новини</a>
+  <a href="#latest-news">Новини</a>
   <a href="#contacts">Контакти</a>
 </nav>
 
@@ -233,7 +268,6 @@ a:hover {
   <p><a href="gallery.html">Переглянути всі фото →</a></p>
 </section>
 
-
 <section id="latest-news">
   <h2>Останні новини</h2>
   <div id="latest-news-container"></div>
@@ -241,26 +275,23 @@ a:hover {
 </section>
 
 <script>
-  fetch('news.json?nocache=' + Date.now())
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('latest-news-container');
-      // беремо останні 4 новини
-      const latest = data.slice(0, 4);
-      latest.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'news-item';
-        div.innerHTML = `
-  <strong>${item.date}:</strong> ${item.text}
-  ${item.link ? `<br><a href="${item.link}" target="_blank">Детальніше →</a>` : ''}
-`;
-        container.appendChild(div);
-      });
-    })
-    .catch(err => console.error('Помилка завантаження новин:', err));
+fetch('news.json?nocache=' + Date.now())
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('latest-news-container');
+    const latest = data.slice(0, 4);
+    latest.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.innerHTML = `
+        <strong>${item.date}:</strong> ${item.text}
+        ${item.link ? `<br><a href="${item.link}" target="_blank">Детальніше →</a>` : ''}
+      `;
+      container.appendChild(div);
+    });
+  })
+  .catch(err => console.error('Помилка завантаження новин:', err));
 </script>
-
-
 
 <section id="contacts">
   <h2>Контакти</h2>
@@ -275,13 +306,3 @@ a:hover {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
